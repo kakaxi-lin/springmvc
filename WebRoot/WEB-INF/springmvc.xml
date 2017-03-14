@@ -20,6 +20,7 @@
 	"> 
 	<!-- 扫描注释包 -->
 	<context:component-scan base-package="yk.controller"></context:component-scan>
+	<context:component-scan base-package="yk.service"></context:component-scan>
 	<!-- 不处理静态资源 -->
 	<mvc:default-servlet-handler/>
 	<!-- 注解所需 @RequestMapping -->
