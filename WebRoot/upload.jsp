@@ -4,18 +4,22 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>测试springmvc中上传的实现</title>
 		<script type="text/javascript">
 		function check_img(){
-			//console.log(1111111111);
 			var a=fom.file;
-			//单位kb
-			//console.log("size..."+fom.file.files[0].size);
+			var imgSize=fom.file.files[0].size;
+			console.log("size..."+imgSize);
+			//上传图片要小于 200kb  以byte
+			if(imgSize>204800){
+				alert("上传图片要小于 200kb");
+				return false;
+			}
+			//上传图片要小于 200kb 
 			var aa=fom.file.value;
-			//console.log(aa);
 			var bb=aa.substring(aa.length-3,aa.length);
 			bb=bb.toLowerCase();
 				if(aa==""){
@@ -43,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 	<body>
 	<!-- onsubmit="return check_img() -->
-<form   method="post" enctype="multipart/form-data" name="fom" >
+		<form method="post" enctype="multipart/form-data" name="fom" >
 			<input type="text" name="name" />
 			<input type="file" name="file" />
 			<input type="button" onclick="funsub()" value="上传图片"/>
