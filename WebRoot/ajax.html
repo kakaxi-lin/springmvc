@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ajax.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript" src="common/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" >
+		var return_data;
+		  $.ajax({
+			  url:"ajax/testAjax?wname=凯",
+			  //data:dept_param,
+			  dataType:"json",
+			  type:"post",
+			  async:false,
+			  success:function(data){
+			      return_data=data;
+			      console.log(data);
+			      alert(data);
+			  }
+		  });
+		  console.log(3333333);
+	</script>
+  </head>
+  
+  <body>
+    222
+  </body>
+</html>

@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 		}
 		function funsub(){
-			fom.action="u?method=upload";
+			fom.action="upload/imageUpload";
 			fom.enctype="multipart/form-data";
 			//fom.target="_blank";
 			if(check_img()){

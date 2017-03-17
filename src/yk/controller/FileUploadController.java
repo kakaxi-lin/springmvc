@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 @Controller
-@RequestMapping(value="u")
+@RequestMapping("upload")
 public class FileUploadController implements ServletContextAware{
 	
 	private ServletContext servletContext;
@@ -24,7 +24,7 @@ public class FileUploadController implements ServletContextAware{
 	}
 	
 	
-	@RequestMapping(params="method=upload", method = RequestMethod.POST)
+	@RequestMapping(value="/imageUpload", method = RequestMethod.POST)
 	public String handleUploadData(String name,@RequestParam("file") CommonsMultipartFile file,HttpServletRequest request){
 		int start=(int) System.currentTimeMillis();
 		System.out.println("开始上传。。。");
@@ -52,7 +52,7 @@ public class FileUploadController implements ServletContextAware{
 		   System.out.println("time..."+(end-start));
 		   String filePath="upload/"+dateFileName;
 		   request.setAttribute("imgSrc",filePath );
-        return "upload_success.jsp";
+        return "../upload_success.jsp";
 		
 	}
 }
