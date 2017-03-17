@@ -33,6 +33,21 @@
 		<property name="viewClass"  value="org.springframework.web.servlet.view.JstlView" />
 	</bean> -->
 	
+	<!-- 过滤器配置 -->
+	<mvc:interceptors>
+		<!-- 拦截所有springmvc的url！ -->
+		<!-- 会拦截静态资源 包含script引入的js,但不会拦截jsp -->
+		<!-- <bean class="yk.interceptor.KaiInterceptor"></bean> -->
+		
+		<mvc:interceptor>
+		    <!-- 只拦截下列路径 -->
+			<mvc:mapping path="/kai/*"/>
+			<!-- 不拦截下列路径 -->
+			<mvc:exclude-mapping path="/kai/marry1"/>
+			<bean class="yk.interceptor.KaiInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<!-- 处理文件上传 -->
 	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 默认编码 (utf-8) -->
