@@ -19,7 +19,7 @@ public class EncodeFilter implements Filter {
 		// TODO Auto-generated method stub
 		this.encoding=null;
 	}
-
+	
 	@Override
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain chain) throws IOException, ServletException {
