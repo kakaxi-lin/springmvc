@@ -11,9 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.google.gson.Gson;
-
 import yk.po.Who;
 import yk.service.KaiService;
 
@@ -76,16 +73,14 @@ public class KaiController {
 
 	// 5.ajax请求
 	// 如果是ajax调用方法，加一个@ResponseBody声明即可
-	//用Gson.jar  不用任何额外配置
+	//引入jackson两个jar包  不用任何额外配置
 	//http://localhost:8080/springmvc/kai/testAjax
-	@RequestMapping("/testAjax")
-	public @ResponseBody String testAjax(String wname) {
+	@RequestMapping(value="/testAjax")
+	public @ResponseBody List<Who> testAjax(String wname) {
 		System.out.println("wname..." + wname);
 		List<Who> list = new ArrayList<Who>();
-		list.add(new Who("1", "凯哥"));
-		list.add(new Who("2", "卡卡西"));
-		Gson gson = new Gson();
-		String g = gson.toJson(list);
-		return g;
+		list.add(new Who("1", "小樱"));
+		list.add(new Who("2", "哈哈"));
+		return list;
 	}
 }

@@ -18,11 +18,13 @@
 	<!-- 扫描注释包 -->
 	<context:component-scan base-package="yk.controller"></context:component-scan>
 	<context:component-scan base-package="yk.service"></context:component-scan>
+	
 	<!-- 不处理静态资源 -->
 	<mvc:default-servlet-handler />
+	
 	<!-- 注解所需 @RequestMapping -->
 	<mvc:annotation-driven></mvc:annotation-driven>
-
+	
 	<!--对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<!-- <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		前缀
@@ -34,19 +36,19 @@
 	</bean> -->
 	
 	<!-- 过滤器配置 -->
-	<mvc:interceptors>
-		<!-- 拦截所有springmvc的url！ -->
-		<!-- 会拦截静态资源 包含script引入的js,但不会拦截jsp -->
-		<!-- <bean class="yk.interceptor.KaiInterceptor"></bean> -->
+	<!-- <mvc:interceptors>
+		拦截所有springmvc的url！
+		会拦截静态资源 包含script引入的js,但不会拦截jsp
+		<bean class="yk.interceptor.KaiInterceptor"></bean>
 		
 		<mvc:interceptor>
-		    <!-- 只拦截下列路径 -->
+		    只拦截下列路径
 			<mvc:mapping path="/kai/*"/>
-			<!-- 不拦截下列路径 -->
+			不拦截下列路径
 			<mvc:exclude-mapping path="/kai/marry1"/>
 			<bean class="yk.interceptor.KaiInterceptor"></bean>
 		</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors> -->
 	
 	<!-- 处理文件上传 -->
 	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

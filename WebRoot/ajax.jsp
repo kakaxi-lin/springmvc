@@ -19,6 +19,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="text/javascript" src="common/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" >
+		var return_data;
+		  $.ajax({
+			  url:"ajax/testAjax",
+			  data:{"wname":"凯"},
+			  dataType:"json",
+			  type:"post",
+			  async:false,
+			  success:function(data){
+			      return_data=data;
+			      //alert(data[0].wname);
+			      console.log(data[0].wname);
+			      //alert(data);
+			  }
+		  });
+		  console.log(3333333);
+	</script>
   </head>
   
   <body>

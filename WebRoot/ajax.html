@@ -12,15 +12,16 @@
 	<script type="text/javascript" >
 		var return_data;
 		  $.ajax({
-			  url:"ajax/testAjax?wname=凯",
-			  //data:dept_param,
+			  url:"kai/testAjax",
+			  data:{"wname":"凯"},
 			  dataType:"json",
 			  type:"post",
 			  async:false,
 			  success:function(data){
 			      return_data=data;
-			      console.log(data);
-			      alert(data);
+			      //alert(data[0].wname);
+			      console.log(data[0].wname);
+			      //alert(data);
 			  }
 		  });
 		  console.log(3333333);
@@ -28,6 +29,6 @@
   </head>
   
   <body>
-    222
+    222等等
   </body>
 </html>
