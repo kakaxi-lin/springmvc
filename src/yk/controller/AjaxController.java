@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import yk.po.Who;
-
 @Controller
 @RequestMapping("/ajax")
 public class AjaxController {
